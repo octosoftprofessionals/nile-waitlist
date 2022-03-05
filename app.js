@@ -10,16 +10,7 @@ app.use(bodyParser.json());
 
 // Routes
 
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.get('/clients', (req, res) => {
-  const sql = 'SELECT * FROM clients';
-
-  pool.query(sql, (error, results) => {
-    if (error) throw error;
-    results.length > 0 ? res.json(results) : res.send('not results');
-  });
-});
+app.get('/', (req, res) => res.send('welcome'));
 
 app.post('/clients', (req, res) => {
   const clientsObj = {
